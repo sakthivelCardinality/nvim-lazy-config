@@ -14,21 +14,24 @@ return {
   {
     "Shatur/neovim-ayu",
     config = function()
+      -- bg set to "None" to make background transparent or any custom value. Default value "#1F2430"
+      local bg = "None"
+      local fg = "#CBCCC6"
+      local fg_idle = "#607080"
+      local panel_border = "#101521"
+
       require("ayu").setup({
         mirage = false, -- Set to `true` to use `mirage` variant instead of `dark` for dark background.
         overrides = {
-          -- Normal = { bg = "#000000" },
-
-          -- set background to transparent
-          Normal = { bg = "None" },
-          ColorColumn = { bg = "None" },
-          SignColumn = { bg = "None" },
-          Folded = { bg = "None" },
-          FoldColumn = { bg = "None" },
-          CursorLine = { bg = "None" },
-          CursorColumn = { bg = "None" },
-          WhichKeyFloat = { bg = "None" },
-          VertSplit = { bg = "None" },
+          Normal = { bg = bg, fg = fg },
+          ColorColumn = { bg = bg },
+          SignColumn = { bg = bg },
+          Folded = { bg = bg, fg = fg_idle },
+          FoldColumn = { bg = bg },
+          CursorLine = { bg = bg },
+          CursorColumn = { bg = bg },
+          WhichKeyFloat = { bg = bg },
+          VertSplit = { bg = bg, fg = panel_border },
 
           -- set line number color
           -- CursorLineNr = {
