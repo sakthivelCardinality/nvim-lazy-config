@@ -4,11 +4,11 @@ return {
     lazy = true,
     opts = {
       style = "moon",
-      -- transparent = true,
-      -- styles = {
-      --   sidebars = "transparent",
-      --   floats = "transparent",
-      -- },
+      transparent = true,
+      styles = {
+        sidebars = "transparent",
+        floats = "transparent",
+      },
     },
   },
   {
@@ -52,6 +52,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
+      -- colorscheme = "tokyonight",
       colorscheme = "ayu",
     },
   },
