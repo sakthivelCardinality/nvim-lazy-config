@@ -10,3 +10,4 @@ vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 vim.opt.scrolloff = 8
 vim.opt.listchars:append("space:⋅")
 vim.opt.listchars:append("eol:↴")
+vim.opt.wrap = true

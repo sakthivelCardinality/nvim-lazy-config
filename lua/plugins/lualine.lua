@@ -68,10 +68,10 @@ return {
             { "location", padding = { left = 0, right = 1 } },
           },
           lualine_z = {
-            function()
-              -- return " " .. os.date("%R")
-              return os.date("%r")
-            end,
+            --   function()
+            --     -- return " " .. os.date("%R")
+            --     return os.date("%r")
+            --   end,
           },
         },
         winbar = {
