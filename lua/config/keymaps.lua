@@ -19,9 +19,9 @@ vim.keymap.set("n", "<leader>sp", '<cmd>lua require("spectre").open_file_search(
 -- vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move selected content down" })
 -- vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move selected content up" })
 
-vim.keymap.set("i", "<C-b>", "<ESC>^i", { desc = "Beginning of line" })
-vim.keymap.set("i", "<C-e>", "<End>", { desc = "End of line" })
-vim.keymap.set("i", "<C-h>", "<Left>", { desc = "Move Left" })
-vim.keymap.set("i", "<C-l>", "<Right>", { desc = "Move Right" })
+-- vim.keymap.set("i", "<C-b>", "<ESC>^i", { desc = "Beginning of line" })
+-- vim.keymap.set("i", "<C-e>", "<End>", { desc = "End of line" })
+-- vim.keymap.set("i", "<C-h>", "<Left>", { desc = "Move Left" })
+-- vim.keymap.set("i", "<C-l>", "<Right>", { desc = "Move Right" })
 -- vim.keymap.set("i", "<C-j>", "<Down>", { desc = "Move Down" })
 -- vim.keymap.set("i", "<C-k>", "<Up>", { desc = "Move Up" })
