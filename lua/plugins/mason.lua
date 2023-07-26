@@ -14,6 +14,8 @@ return {
         "deno",
         "prettier",
         "eslint-lsp",
+        "emmet-language-server",
+        "tailwindcss-language-server",
 
         -- c/cpp stuff
         "clangd",
