@@ -11,6 +11,7 @@ return {
       keys = {
         { "<leader>du", function() require("dapui").toggle({ }) end, desc = "Dap UI" },
         { "<leader>de", function() require("dapui").eval() end, desc = "Eval", mode = {"n", "v"} },
+        { "<leader>dU", function() require("dapui").open({reset = true}) end, desc = "Reset the debugger style", mode = {"n", "v"} },
       },
         opts = {},
         config = function(_, opts)
@@ -68,21 +69,39 @@ return {
           },
         },
       },
+      {
+        "mxsdev/nvim-dap-vscode-js",
+        dependencies = {
+          "microsoft/vscode-js-debug",
+          version = "1.x",
+          build = "npm install --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out",
+        },
+        opts = {
+          debugger_path = vim.fn.stdpath("data") .. "/lazy/vscode-js-debug",
+          adapters = {
+            "pwa-node",
+            "pwa-chrome",
+            "pwa-msedge",
+            "node-terminal",
+            "pwa-extensionHost",
+          },
+        },
+      },
     },
 
   -- stylua: ignore
   keys = {
-    { "<leader>dB", function() require("dap").set_breakpoint(vim.fn.input('Breakpoint condition: ')) end, desc = "Breakpoint Condition" },
+    { "<leader>dB", function() require("dap").clear_breakpoints() end, desc = "Clear all Breakpoint" },
     { "<leader>db", function() require("dap").toggle_breakpoint() end, desc = "Toggle Breakpoint" },
-    { "<leader>dc", function() require("dap").continue() end, desc = "Continue" },
+    { "<leader>dc", function() require("dap").continue() end, desc = "Run or Continue the debugger" },
     { "<leader>dC", function() require("dap").run_to_cursor() end, desc = "Run to Cursor" },
     { "<leader>dg", function() require("dap").goto_() end, desc = "Go to line (no execute)" },
     { "<leader>di", function() require("dap").step_into() end, desc = "Step Into" },
     { "<leader>dj", function() require("dap").down() end, desc = "Down" },
     { "<leader>dk", function() require("dap").up() end, desc = "Up" },
     { "<leader>dl", function() require("dap").run_last() end, desc = "Run Last" },
-    { "<leader>do", function() require("dap").step_out() end, desc = "Step Out" },
-    { "<leader>dO", function() require("dap").step_over() end, desc = "Step Over" },
+    { "<leader>dO", function() require("dap").step_out() end, desc = "Step Out" },
+    { "<leader>do", function() require("dap").step_over() end, desc = "Step Over" },
     { "<leader>dp", function() require("dap").pause() end, desc = "Pause" },
     { "<leader>dr", function() require("dap").repl.toggle() end, desc = "Toggle REPL" },
     { "<leader>ds", function() require("dap").session() end, desc = "Session" },
@@ -100,6 +119,35 @@ return {
           "Dap" .. name,
           { text = sign[1], texthl = sign[2] or "DiagnosticInfo", linehl = sign[3], numhl = sign[3] }
         )
+      end
+
+      local dap = require("dap")
+
+      for _, language in ipairs({ "typescript", "javascript", "typescriptreact", "javascriptreact" }) do
+        dap.configurations[language] = {
+          {
+            type = "pwa-node",
+            request = "launch",
+            name = "Launch file",
+            program = "${file}",
+            cwd = "${workspaceFolder}",
+          },
+          {
+            type = "pwa-node",
+            request = "attach",
+            name = "Attach",
+            processId = require("dap.utils").pick_process,
+            cwd = "${workspaceFolder}",
+          },
+          {
+            type = "pwa-chrome",
+            request = "launch",
+            name = 'Start Chrome with "localhost"',
+            url = "http://localhost:3000",
+            webRoot = "${workspaceFolder}",
+            userDataDir = "${workspaceFolder}/.vscode/vscode-chrome-debug-userdatadir",
+          },
+        }
       end
     end,
   },
