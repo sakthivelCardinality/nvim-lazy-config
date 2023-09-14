@@ -27,8 +27,21 @@ map("n", "<C-c>", "<cmd> %y+ <CR>", { desc = "Copy whole file" })
 map("n", "<leader>sp", '<cmd>lua require("spectre").open_file_search()<CR>', {
   desc = "Search on current file",
 })
+
+map("n", "<leader>rp", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>", {
+  desc = "inline find replace",
+})
+
 map("i", "<C-h>", "<Left>", { desc = "Move Left" })
 map("i", "<C-l>", "<Right>", { desc = "Move Right" })
+
+-- git work tree keybindings
+map("n", "<leader>gw", "<cmd>lua require('telescope').extensions.git_worktree.git_worktrees()<CR>", {
+  desc = "show all branch in git-worktree",
+})
+map("n", "<leader>gW", "<cmd>lua require('telescope').extensions.git_worktree.create_git_worktree()<CR>", {
+  desc = "create new branch in git-worktree",
+})
 
 -- map("n", "<leader>/", "<cmd> Telescope buffers <CR>", { desc = "Telescope Buffer" })
 

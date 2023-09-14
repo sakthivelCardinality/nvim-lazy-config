@@ -7,12 +7,31 @@ return {
       -- fancy UI for the debugger
       {
         "rcarriga/nvim-dap-ui",
-      -- stylua: ignore
-      keys = {
-        { "<leader>du", function() require("dapui").toggle({ }) end, desc = "Dap UI" },
-        { "<leader>de", function() require("dapui").eval() end, desc = "Eval", mode = {"n", "v"} },
-        { "<leader>dU", function() require("dapui").open({reset = true}) end, desc = "Reset the debugger style", mode = {"n", "v"} },
-      },
+        keys = {
+          {
+            "<leader>du",
+            function()
+              require("dapui").toggle({})
+            end,
+            desc = "Dap UI",
+          },
+          {
+            "<leader>de",
+            function()
+              require("dapui").eval()
+            end,
+            desc = "Eval",
+            mode = { "n", "v" },
+          },
+          {
+            "<leader>dU",
+            function()
+              require("dapui").open({ reset = true })
+            end,
+            desc = "Reset the debugger style",
+            mode = { "n", "v" },
+          },
+        },
         opts = {},
         config = function(_, opts)
           local dap = require("dap")

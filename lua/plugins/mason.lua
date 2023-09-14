@@ -16,6 +16,7 @@ return {
         "eslint-lsp",
         "emmet-language-server",
         "tailwindcss-language-server",
+        "angular-language-server",
 
         -- c/cpp stuff
         "clangd",
