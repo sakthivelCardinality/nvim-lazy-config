@@ -36,12 +36,12 @@ map("i", "<C-h>", "<Left>", { desc = "Move Left" })
 map("i", "<C-l>", "<Right>", { desc = "Move Right" })
 
 -- git work tree keybindings
-map("n", "<leader>gw", "<cmd>lua require('telescope').extensions.git_worktree.git_worktrees()<CR>", {
-  desc = "show all branch in git-worktree",
-})
-map("n", "<leader>gW", "<cmd>lua require('telescope').extensions.git_worktree.create_git_worktree()<CR>", {
-  desc = "create new branch in git-worktree",
-})
+-- map("n", "<leader>gw", "<cmd>lua require('telescope').extensions.git_worktree.git_worktrees()<CR>", {
+--   desc = "show all branch in git-worktree",
+-- })
+-- map("n", "<leader>gW", "<cmd>lua require('telescope').extensions.git_worktree.create_git_worktree()<CR>", {
+--   desc = "create new branch in git-worktree",
+-- })
 
 -- map("n", "<leader>/", "<cmd> Telescope buffers <CR>", { desc = "Telescope Buffer" })
 
