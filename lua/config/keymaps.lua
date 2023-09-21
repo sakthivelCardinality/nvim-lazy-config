@@ -32,9 +32,10 @@ map("n", "<leader>rp", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>", {
   desc = "inline find replace",
 })
 
-map("i", "<C-h>", "<Left>", { desc = "Move Left" })
-map("i", "<C-l>", "<Right>", { desc = "Move Right" })
-map("i", "<C-j>", "<Down>", { desc = "Move Down" })
+map("i", "<C-h>", "<Left>", { desc = "Move Cursor Left Insert Mode", remap = true })
+map("i", "<C-l>", "<Right>", { desc = "Move Cursor Right Insert Mode", remap = true })
+map("i", "<C-j>", "<Down>", { desc = "Move Cursor Down Insert Mode", remap = true })
+map("i", "<C-k>", "<Up>", { desc = "Move Cursor Up Insert Mode", remap = true })
 
 -- git work tree keybindings
 -- map("n", "<leader>gw", "<cmd>lua require('telescope').extensions.git_worktree.git_worktrees()<CR>", {
