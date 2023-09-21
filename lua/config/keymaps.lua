@@ -34,6 +34,7 @@ map("n", "<leader>rp", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>", {
 
 map("i", "<C-h>", "<Left>", { desc = "Move Left" })
 map("i", "<C-l>", "<Right>", { desc = "Move Right" })
+map("i", "<C-j>", "<Down>", { desc = "Move Down" })
 
 -- git work tree keybindings
 -- map("n", "<leader>gw", "<cmd>lua require('telescope').extensions.git_worktree.git_worktrees()<CR>", {

@@ -11,3 +11,4 @@ vim.opt.scrolloff = 8
 vim.opt.listchars:append("space:⋅")
 vim.opt.listchars:append("eol:↴")
 vim.opt.wrap = true
+vim.opt.swapfile = false
