@@ -1,17 +1,17 @@
 return {
-  {
-    "folke/tokyonight.nvim",
-    lazy = false,
-    opts = {
-      style = "moon",
-      transparent = true,
-      terminal_colors = true,
-      styles = {
-        sidebars = "transparent",
-        floats = "transparent",
-      },
-    },
-  },
+  -- {
+  --   "folke/tokyonight.nvim",
+  --   lazy = false,
+  --   opts = {
+  --     style = "moon",
+  --     transparent = true,
+  --     terminal_colors = true,
+  --     styles = {
+  --       sidebars = "transparent",
+  --       floats = "transparent",
+  --     },
+  --   },
+  -- },
   {
     "Mofiqul/dracula.nvim",
     opts = {
