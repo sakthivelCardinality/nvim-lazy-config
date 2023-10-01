@@ -37,6 +37,14 @@ map("i", "<C-l>", "<Right>", { desc = "Move Cursor Right Insert Mode" })
 map("i", "<C-j>", "<Down>", { desc = "Move Cursor Down Insert Mode" })
 map("i", "<C-k>", "<Up>", { desc = "Move Cursor Up Insert Mode" })
 
+vim.keymap.set("n", "gf", function()
+  if require("obsidian").util.cursor_on_markdown_link() then
+    return "<cmd>ObsidianFollowLink<CR>"
+  else
+    return "gf"
+  end
+end, { noremap = false, expr = true })
+
 -- git work tree keybindings
 -- map("n", "<leader>gw", "<cmd>lua require('telescope').extensions.git_worktree.git_worktrees()<CR>", {
 --   desc = "show all branch in git-worktree",

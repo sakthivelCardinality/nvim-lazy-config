@@ -3,9 +3,10 @@ return {
   optional = true,
   opts = {
     defaults = {
-      ["<leader>d"] = { name = "+debug" },
-      ["<leader>da"] = { name = "+adapters" },
-      ["<leader>r"] = { name = "+replace" },
+      ["<leader>d"] = { name = "+Debug" },
+      ["<leader>da"] = { name = "+Adapters" },
+      ["<leader>r"] = { name = "+Replace" },
+      ["<leader>o"] = { name = "+Obsidian" },
     },
   },
 }
